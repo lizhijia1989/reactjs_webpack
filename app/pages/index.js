@@ -13,7 +13,8 @@ export default class Index extends React.Component {
       <div className="container">
         <div className={styles.container}>
           <h1 className={styles.title}>首页</h1>
-          <p>这是文章</p>
+          <h1 className={styles.newTitle}>新标题</h1>
+          <div className={`${styles.container} container`}>多类名</div>
         </div>
       </div>
     );
