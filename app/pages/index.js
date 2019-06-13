@@ -10,9 +10,11 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <div className={'container'}>
-        <h1 className={styles.title}>首页</h1>
-        <p>这是文章</p>
+      <div className="container">
+        <div className={styles.container}>
+          <h1 className={styles.title}>首页</h1>
+          <p>这是文章</p>
+        </div>
       </div>
     );
   }
