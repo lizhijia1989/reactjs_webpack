@@ -3,5 +3,5 @@
 - npm start
 - localhost:3000
 
-## learning
+## list
 - css module
