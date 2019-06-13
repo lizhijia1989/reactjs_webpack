@@ -7,6 +7,7 @@ export default class Header extends React.Component {
       <ul>
         <li><Link to='/'>index</Link></li>
         <li><Link to='/login'>login</Link></li>
+        <li><Link to='/learning'>learning</Link></li>
       </ul>
     );
   }
