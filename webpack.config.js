@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const appRoot = './app';
 const devPath = './dev';
 
@@ -11,12 +13,12 @@ module.exports = {
     index: path.resolve(appRoot, 'main.js'),
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(devPath),
+    filename: 'index.js',
+    path: path.resolve(devPath, ''),
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.resolve(devPath),
+    contentBase: path.resolve(devPath, ''),
     port: 3000,
     historyApiFallback: true
   },
@@ -28,11 +30,14 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: path.resolve(devPath)
+              publicPath: path.resolve(devPath, '/')
             }
           },
           {
             loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
           }
         ],
         include: path.resolve(appRoot, './css/base.css'),
@@ -43,7 +48,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: path.resolve(devPath)
+              publicPath: path.resolve(devPath, '/')
             }
           },
           {
@@ -52,15 +57,23 @@ module.exports = {
               modules: true,
               localIdentName: '[name]__[local]-[hash:base64:5]',
             }
+          },
+          {
+            loader: 'postcss-loader',
           }
         ],
         include: path.resolve(appRoot),
         exclude: path.resolve(appRoot, './css/base.css'),
       },
-      { test: /\.(js|jsx)$/, use: ['babel-loader'] ,include: path.resolve(appRoot) },
+      { test: /\.(js|jsx)$/, use: ['babel-loader'], include: path.resolve(appRoot) },
+      {
+        test: /\.(eot|svg|ttf|woff)$/,
+        use: ['file-loader']
+      },
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(appRoot, 'index.html')
@@ -68,6 +81,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'index.css',
       chunkFilename: 'index[id].css'
-    })
+    }),
   ],
 };

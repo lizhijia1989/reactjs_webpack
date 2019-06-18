@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <font id="reactjs_webpack" horiz-adv-x="1024">
+      <font-face
+        font-family="reactjs_webpack"
+        units-per-em="1024"
+        ascent="1024"
+        descent="0"
+      />
+      <missing-glyph horiz-adv-x="0"/>
+        <glyph
+          glyph-name="yo-fanhuizuixine287-f"
+          unicode="&#xe28b;"
+          horiz-adv-x="1024" d=" M629.333 155.733C642.133 145.067 663.467 145.067 674.133 160C684.8 172.8 684.8 194.133 669.867 202.667L302.933 503.467C298.667 507.733 298.667 514.133 300.8 516.267L669.867 819.2C682.667 829.867 684.8 851.2 674.133 861.867C663.467 874.667 642.133 876.8 629.333 866.133L253.867 558.933C226.133 533.333 226.133 484.267 262.4 456.533L629.333 155.733z" />
+    </font>
+  </defs>
+</svg>

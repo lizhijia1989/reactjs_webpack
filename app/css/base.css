@@ -1,20 +1,30 @@
 @charset "utf-8";
 html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, input { margin: 0; padding: 0; }
-/* html { height: 100% } */
-body { line-height: 1.5; font-size: 14px; font-family: Tahoma, Simsun, sans-serif; color: #333; background-color: #fff; }
-/* body { min-height: 100%; } */
+html { height: 100% }
+body { height: 100%; line-height: 1.5; font-size: 16px; font-family: "PingFang SC", miui, system-ui, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif; color: #333; background-color: #fff; }
 li { list-style: none; }
 img { vertical-align: top; }
 input, button { outline: 0 none; -webkit-appearance: none; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
-h1 { font-weight: normal; font-size: 24px; }
 input[type="text"], input[type="password"] { padding: 5px; font-size: 14px; border: 1px solid #ddd; }
 input[type="text"]:hover, input[type="password"]:hover { border-color: #bbb; }
 input[type="text"]:focus, input[type="password"]:focus { border-color: #3486ee; }
-.clearfix { *zoom: 1; }
-.clearfix::after { content: ""; clear: both; display: block; height: 0; line-height: 0; overflow: hidden; }
+#app { height: 100%; }
 
-.container { padding: 0 10px }
-.button-submit { min-width: 80px; padding: 5px 10px; font-size: 14px; color: #fff; border: 0 none; background-color: #3486ee; border-radius: 3px; cursor: pointer; }
-.button-submit:hover { background-color: #579bf3; }
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/reactjs_webpack.eot'); /* IE9*/
+  src: url('../font/reactjs_webpack.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/reactjs_webpack.woff') format('woff'), /* chrome、firefox */
+  url('../font/reactjs_webpack.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../font/reactjs_webpack.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}

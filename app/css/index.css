@@ -1,6 +1,1 @@
-.container { margin: 20px; }
-.title { color: red; }
-.newTitle {
-  composes: title;
-  font-size: 14px;
-}
+.container {}
