@@ -6,3 +6,4 @@
 ## list
 - css module
 - flexible.js
+- setState的同步和异步
