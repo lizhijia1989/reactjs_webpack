@@ -4,7 +4,7 @@ import Viewport from './components/viewport.js';
 import Header from './components/header.js';
 import styles from '../css/cssModule.css';
 
-export default class Index extends React.Component {
+export default class CssModule extends React.Component {
   constructor(props) {
     super(props);
   }

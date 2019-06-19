@@ -5,6 +5,7 @@ import index from '../pages/index.js';
 import login from '../pages/login.js';
 import cssModule from '../pages/cssModule.js';
 import setState from '../pages/setState.js';
+import event from '../pages/event.js';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -12,6 +13,7 @@ const AppRouter = () => (
       <Route exact path="/" component={index} />
       <Route path="/cssModule" component={cssModule}></Route>
       <Route path="/setState" component={setState}></Route>
+      <Route path="/event" component={event}></Route>
       <Route path="/login" component={login}></Route>
     </Fragment>
   </BrowserRouter>

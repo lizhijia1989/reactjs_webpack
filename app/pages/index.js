@@ -20,6 +20,7 @@ export default class Index extends React.Component {
           <ul>
             <li><Link to='/cssModule'>cssModule</Link></li>
             <li><Link to='/setState'>setState</Link></li>
+            <li><Link to='/event'>event</Link></li>
             <li><Link to='/login'>login</Link></li>
           </ul>
           <p>1<br/><br/><br/><br/></p>

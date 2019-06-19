@@ -14,8 +14,7 @@ export default class Header extends React.Component {
   }
 
   goback(e) {
-    console.log(e, e.nativeEvent);
-    e.preventDefault();
+    e.stopPropagation();
     this.props.history.goBack();
   }
 

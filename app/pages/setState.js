@@ -3,7 +3,7 @@ import React from 'react';
 import Viewport from './components/viewport.js';
 import Header from './components/header.js';
 
-export default class Index extends React.Component {
+export default class SetState extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
