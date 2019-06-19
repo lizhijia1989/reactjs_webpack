@@ -10,7 +10,6 @@ export default class Header extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log('header.js', props);
   }
 
   goback(e) {

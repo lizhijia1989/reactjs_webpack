@@ -18,9 +18,10 @@ export default class Index extends React.Component {
         <Header title={'首页'} />
         <div className={styles.container}>
           <ul>
-            <li><Link to='/cssModule'>cssModule</Link></li>
+            <li><Link to='/cssModule'>css module</Link></li>
             <li><Link to='/setState'>setState</Link></li>
             <li><Link to='/event'>event</Link></li>
+            <li><Link to='/lifeCycle'>life cycle</Link></li>
             <li><Link to='/login'>login</Link></li>
           </ul>
           <p>1<br/><br/><br/><br/></p>
