@@ -11,7 +11,7 @@ export default class LifeCycle extends React.Component {
     };
   }
 
-  handleClick = (bool, e) => {
+  handleClick(bool, e) {
     if (bool) {
       this.forceUpdate();
     } else {
