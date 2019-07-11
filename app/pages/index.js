@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from '../css/index.css';
 import Viewport from './components/viewport.js';
 import Header from './components/header.js';
-import BottomBar from './components/bottomBar.js';
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -16,28 +14,12 @@ export default class Index extends React.Component {
     return (
       <Viewport>
         <Header title={'首页'} />
-        <div className={styles.container}>
+        <div>
           <ul>
-            <li><Link to='/cssModule'>css module</Link></li>
-            <li><Link to='/setState'>setState</Link></li>
-            <li><Link to='/event'>event</Link></li>
-            <li><Link to='/lifeCycle'>life cycle</Link></li>
             <li><Link to='/login'>login</Link></li>
+            <li><Link to='/note'>note</Link></li>
           </ul>
-          <p>1<br/><br/><br/><br/></p>
-          <p>1<br/><br/><br/><br/></p>
-          <p>1<br/><br/><br/><br/></p>
-          <p>1<br/><br/><br/><br/></p>
-          <p>1<br/><br/><br/><br/></p>
-          <p>1<br/><br/><br/><br/></p>
-          <p>1<br/><br/><br/><br/></p>
-          <p>1<br/><br/><br/><br/></p>
-          <p>1<br/><br/><br/><br/></p>
-          <p>1<br/><br/><br/><br/></p>
-          <p>1<br/><br/><br/><br/></p>
-          <p>1<br/><br/><br/><br/></p>
         </div>
-        <BottomBar />
       </Viewport>
     );
   }
