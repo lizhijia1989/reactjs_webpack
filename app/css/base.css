@@ -12,6 +12,8 @@ input[type="text"]:hover, input[type="password"]:hover { border-color: #bbb; }
 input[type="text"]:focus, input[type="password"]:focus { border-color: #3486ee; }
 input[type="button"], input[type="submit"], button { height: 0.3rem; padding: 0 0.1rem; line-height: 0.3rem; font-size: 0.14rem; border: 1px solid #aaa; border-radius: 4px; cursor: pointer; }
 #app { height: 100%; }
+.logo { display: inline-block; width: 1.26rem; height: 0.43rem; background: url(//pic.c-ctrip.com/common/c_logo2013.png) no-repeat 100% 100%; }
+.logo_relative { display: inline-block; width: 1.26rem; height: 0.43rem; background: url(../img/logo.png) no-repeat 100% 100%; }
 
 @font-face {
   font-family: 'iconfont';

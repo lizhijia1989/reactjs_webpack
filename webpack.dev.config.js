@@ -15,8 +15,8 @@ module.exports = {
     index: path.resolve(appRoot, 'main.js'),
   },
   output: {
-    filename: 'index.js',
-    path: path.resolve(outputPath, ''),
+    filename: 'js/index.bundle.js',
+    path: path.resolve(outputPath, '')
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -27,17 +27,18 @@ module.exports = {
   },
   module: {
     rules: [
+      { test: /\.(js|jsx)$/, use: ['babel-loader'], include: path.resolve(appRoot) },
       {
         test: /\.(css)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: path.resolve(outputPath, '/')
+              publicPath: path.relative(outputPath, '')
             }
           },
           {
-            loader: 'css-loader',
+            loader: 'css-loader'
           },
           {
             loader: 'postcss-loader',
@@ -51,7 +52,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: path.resolve(outputPath, '/')
+              publicPath: path.relative(outputPath, '')
             }
           },
           {
@@ -68,10 +69,29 @@ module.exports = {
         include: path.resolve(appRoot),
         exclude: path.resolve(appRoot, './css/base.css'),
       },
-      { test: /\.(js|jsx)$/, use: ['babel-loader'], include: path.resolve(appRoot) },
       {
         test: /\.(eot|svg|ttf|woff)$/,
-        use: ['file-loader']
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'font/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img/'
+            }
+          }
+        ]
       },
     ],
   },
@@ -82,8 +102,7 @@ module.exports = {
       template: path.resolve(appRoot, 'index.html')
     }),
     new MiniCssExtractPlugin({
-      filename: 'index.css',
-      chunkFilename: 'index[id].css'
+      filename: 'css/[name].css',
     }),
   ],
 };

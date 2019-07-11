@@ -33,7 +33,7 @@ export default class Event extends React.Component {
   render() {
     return (
       <Viewport>
-        <Header history={this.props.history} title="event" />
+        <Header history={this.props.history} title="冒泡和默认事件" />
         <div style={{ width: '3rem', height: '3rem', backgroundColor: 'red' }} onClick={this.handleClickOuter}>
           <div style={{ width: '2rem', height: '2rem', backgroundColor: 'blue' }} onClick={this.handleClickInner}>
             <form action="">

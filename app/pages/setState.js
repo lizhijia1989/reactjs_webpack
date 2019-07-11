@@ -41,7 +41,7 @@ export default class SetState extends React.Component {
   render() {
     return (
       <Viewport>
-        <Header history={this.props.history} title="setState" />
+        <Header history={this.props.history} title="setState的同步和异步" />
         <p>text: {this.state.text}</p>
         <input type="text" value={this.state.value} onChange={this.handleChange} onBlur={this.handleBlur} />
         <input type="button" value="点击" style={{ marginLeft: '10px' }} onClick={this.handleClick} />

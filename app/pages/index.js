@@ -14,12 +14,12 @@ export default class Index extends React.Component {
     return (
       <Viewport>
         <Header title={'首页'} />
-        <div>
-          <ul>
-            <li><Link to='/login'>login</Link></li>
-            <li><Link to='/note'>note</Link></li>
-          </ul>
-        </div>
+        <ul>
+          <li><Link to="/login">login</Link></li>
+          <li><Link to="/note">note</Link></li>
+        </ul>
+        <span className="logo"></span>
+        <span className="logo logo_relative"></span>
       </Viewport>
     );
   }

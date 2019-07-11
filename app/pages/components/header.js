@@ -24,7 +24,7 @@ export default class Header extends React.Component {
           <div className={styles.icoBoxLeft}>
             {this.props.history ?
                 <span
-                  className={`iconfont ${styles.icoBack} ${styles.icoBack}`}
+                  className={`iconfont ${styles.icoBack}`}
                   onClick={this.goback.bind(this)}
                 >&#xe28b;</span> : null}
           </div>
