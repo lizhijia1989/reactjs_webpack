@@ -5,24 +5,20 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const appRoot = './app';
-const devPath = './dev';
+const outputPath = './prod';
+
+console.log('env', process.env.NODE_ENV);
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     index: path.resolve(appRoot, 'main.js'),
   },
   output: {
     filename: 'index.js',
-    path: path.resolve(devPath, ''),
+    path: path.resolve(outputPath, ''),
   },
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: path.resolve(devPath, ''),
-    host: '0.0.0.0',
-    port: 3000,
-    historyApiFallback: true
-  },
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -31,7 +27,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: path.resolve(devPath, '/')
+              publicPath: path.resolve(outputPath, '/')
             }
           },
           {
@@ -49,7 +45,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: path.resolve(devPath, '/')
+              publicPath: path.resolve(outputPath, '/')
             }
           },
           {

@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors",
-    "dev": "webpack --config webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "export NODE_ENV='development' && webpack-dev-server --config webpack.dev.config.js --progress --colors",
+    "dev": "export NODE_ENV='development' && webpack --config webpack.dev.config.js",
+    "build": "export NODE_ENV='production' && webpack --config webpack.prod.config.js"
   },
   "author": "lzj",
   "license": "ISC",

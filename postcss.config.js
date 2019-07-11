@@ -1,7 +1,12 @@
 module.exports = {
   plugins: {
     'postcss-preset-env': {
-      'browsers': ['> 1%', 'last 5 versions']
+      'browserslist': [
+        'last 5 version',
+        '> 5%',
+        'maintained node versions',
+        'not dead'
+      ]
     },
   }
 }
