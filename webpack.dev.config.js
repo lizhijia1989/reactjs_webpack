@@ -4,30 +4,29 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const appRoot = './app';
-const outputPath = './dev';
-
-console.log('env', process.env.NODE_ENV);
+const appRoot = path.resolve('app');
+const outputPath = path.resolve('dev');
+console.log('env', process.env.NODE_ENV, '\n', path.relative(appRoot, ''), path.relative(outputPath, ''));
 
 module.exports = {
   mode: 'development',
   entry: {
-    index: path.resolve(appRoot, 'main.js'),
+    index: path.join(appRoot, 'main.js'),
   },
   output: {
     filename: 'js/index.bundle.js',
-    path: path.resolve(outputPath, '')
+    path: outputPath
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.resolve(outputPath, ''),
+    contentBase: outputPath,
     host: '0.0.0.0',
     port: 3000,
     historyApiFallback: true
   },
   module: {
     rules: [
-      { test: /\.(js|jsx)$/, use: ['babel-loader'], include: path.resolve(appRoot) },
+      { test: /\.(js|jsx)$/, use: ['babel-loader'], include: appRoot },
       {
         test: /\.(css)$/,
         use: [
@@ -44,7 +43,7 @@ module.exports = {
             loader: 'postcss-loader',
           }
         ],
-        include: path.resolve(appRoot, './css/base.css'),
+        include: path.join(appRoot, 'css/base.css'),
       },
       {
         test: /\.(css)$/,
@@ -66,8 +65,8 @@ module.exports = {
             loader: 'postcss-loader',
           }
         ],
-        include: path.resolve(appRoot),
-        exclude: path.resolve(appRoot, './css/base.css'),
+        include: appRoot,
+        exclude: path.join(appRoot, 'css/base.css'),
       },
       {
         test: /\.(eot|svg|ttf|woff)$/,
@@ -76,7 +75,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'font/'
+              outputPath: 'font'
             }
           }
         ]
@@ -88,7 +87,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'img/'
+              outputPath: 'img'
             }
           }
         ]
@@ -99,10 +98,10 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(appRoot, 'index.html')
+      template: path.join(appRoot, 'index.html')
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
+      filename: 'css/[name].css'
     }),
   ],
 };
