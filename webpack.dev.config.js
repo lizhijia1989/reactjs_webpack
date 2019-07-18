@@ -74,8 +74,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-              outputPath: 'font'
+              name: 'font/[name].[ext]'
             }
           }
         ]
@@ -86,8 +85,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-              outputPath: 'img'
+              name: 'img/[name].[ext]',
             }
           }
         ]
@@ -98,10 +96,29 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.join(appRoot, 'index.html')
+      template: path.join(appRoot, 'index.html'),
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css'
     }),
   ],
+  optimization: {
+    splitChunks: {
+      // chunks: 'async',
+      // minSize: 30000,
+      // maxSize: 0,
+      // minChunks: 1, // 被entry引入的次数
+      // maxAsyncRequests: 5,
+      // maxInitialRequests: 3,
+      // automaticNameDelimiter: '~',
+      // name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        }
+      }
+    }
+  }
 };
