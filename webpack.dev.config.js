@@ -14,7 +14,7 @@ module.exports = {
     index: path.join(appRoot, 'main.js'),
   },
   output: {
-    filename: 'js/index.bundle.js',
+    filename: 'js/bundle.[hash:5].js',
     path: outputPath
   },
   devtool: 'inline-source-map',
@@ -58,7 +58,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[name]__[local]-[hash:base64:5]',
+              localIdentName: '[name]__[local]-[hash:5]',
             }
           },
           {
@@ -74,7 +74,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'font/[name].[ext]'
+              name: 'font/[name].[hash:5].[ext]'
             }
           }
         ]
@@ -85,7 +85,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'img/[name].[ext]',
+              name: 'img/[name].[hash:5].[ext]',
             }
           }
         ]
@@ -100,7 +100,7 @@ module.exports = {
       template: path.join(appRoot, 'index.html'),
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css'
+      filename: 'css/[name].[contenthash:5].css'
     }),
   ],
   optimization: {
@@ -120,6 +120,7 @@ module.exports = {
           chunks: 'all',
         }
       }
-    }
+    },
+    // runtimeChunk: true
   }
 };

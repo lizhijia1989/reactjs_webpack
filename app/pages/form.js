@@ -13,8 +13,8 @@ export default class Form extends Component {
     };
     console.log('constructor', props)
   }
-  componentWillMount() {
-    console.log('componentWillMount')
+  componentDidMount() {
+    console.log('componentDidMount')
     fetch(API_TEST, {
       method: 'GET',
       headers: {

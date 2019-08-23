@@ -3,6 +3,8 @@ import React from 'react';
 import Viewport from './components/viewport.js';
 import Header from './components/header.js';
 
+console.log('test async');
+
 export default class LifeCycle extends React.Component {
   constructor(props) {
     super(props);
